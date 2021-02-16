@@ -1,0 +1,51 @@
+{
+    "add_model":{
+        "file_type":"Docker",
+        "learn_type":"regression",
+        "processor_type":"cpu",
+        "model_name":"test_api_model",
+        "model_description":"test description",
+        "model_tags":["test tag"],
+        "custom_fields":"{}"
+    },
+    "add_model_version":{
+        "docker_secret":"regcred-3b70",
+        "environment_vars":{},
+        "webservice_run_cmd":"gunicorn -k gevent --worker-connections=1000 --backlog=1000 --log-level info -c ${APP_DIR}/kubernetes_gunicorn.conf wsgi:app --bind :80",
+        "batch_run_cmd":"python3.6 batch_predict.py",
+        "is_api_integration":false,
+        "trainingDataset":"no_training",
+        "advanced_settings":{},
+        "version_name":"v1",
+        "registry":"docker.io",
+        "repository":"datatron",
+        "image_name":"docker-service",
+        "tag":"xgboost",
+        "version_description":"",
+        "customFields":{},
+        "custom_fields":{},
+        "training_artifact_url":"",
+        "training_dataset_url":"",
+        "training_data":"",
+        "connector":"3"
+    },
+    "add_input_contract":{
+        "input_features":{
+            "Black":{"type":"element"},
+            "Married":{"type":"element"},
+            "Boy":{"type":"element"},
+            "MomAge":{"type":"element"},
+            "MomSmoke":{"type":"element"},
+            "CigsPerDay":{"type":"element"},
+            "MomWtGain":{"type":"element"},
+            "Visit":{"type":"element"},
+            "MomEdLevel":{"type":"element"}
+        }
+    },
+    "add_output_contract":
+    {
+        "output_features":{
+            "outputs":{"type":"element"}
+        }
+    }
+}

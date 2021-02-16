@@ -1,0 +1,52 @@
+{
+    "serving": {
+        "add_serving_workspace": {
+            "workspace_name": "add_serving",
+            "workspace_type": "Serving"
+        },
+        "add_publisher": {
+            "workitem_name":"test_publisher",
+            "workitem_description":"test description"
+        },
+        "add_challenger": {
+            "workitem_name":"test_challenger",
+            "workitem_description":"test description"
+        }
+    },
+    "scoring": {
+        "add_scoring_workspace": {   
+            "workspaces": {
+                "workspace_name": "add_scoring",
+                "workspace_type": "Scoring"
+            },
+            "workflow_managers": {
+                "github_repo":{},
+                "instance_count":1,
+                "instance_type":"small",
+                "schedule":"0 0 * * *",
+                "subscription_emails":[],
+                "workitem_description":"",
+                "workitem_name":"add_scoring",
+                "workitem_type":"Workflow Manager"
+            }
+        }
+    },
+    "scoring_lite": {
+        "add_scoring_lite_workspace": {   
+            "workspaces": {
+                "workspace_name": "add_scoring_lite",
+                "workspace_type": "Scoring-lite"
+            },
+            "workflow_managers": {
+                "github_repo":{},
+                "instance_count":1,
+                "instance_type":"small",
+                "schedule":"0 0 * * *",
+                "subscription_emails":[],
+                "workitem_description":"",
+                "workitem_name":"add_scoring_lite",
+                "workitem_type":"Workflow Manager"
+            }
+        }
+    }
+}

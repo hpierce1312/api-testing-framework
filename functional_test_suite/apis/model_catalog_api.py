@@ -1,0 +1,1 @@
+MODEL_CATALOG_API = '/api/model-catalog'
